@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Pro - Editor de Markdown em Tempo Real</title>
+    <meta name="description" content="O melhor editor de Markdown online com visualização em tempo real, suporte a GFM, modo escuro e acessibilidade em LIBRAS." />
+    <meta name="keywords" content="markdown, editor, live preview, libras, acessibilidade, google login, react, tailwind" />
+    <meta name="author" content="Live Pro Team" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Live Pro - Editor de Markdown em Tempo Real" />
+    <meta property="og:description" content="Editor de Markdown elegante e performático com visualização instantânea e acessibilidade completa." />
+    <meta property="og:image" content="https://picsum.photos/seed/markdown/1200/630" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

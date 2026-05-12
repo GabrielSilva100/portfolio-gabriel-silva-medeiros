@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  :root {
+    --selection-bg: #c7d2fe;
+    --selection-text: #1e1b4b;
+  }
+
+  .dark {
+    --selection-bg: #312e81;
+    --selection-text: #e0e7ff;
+  }
+
+  * {
+    @apply transition-colors duration-200;
+    scrollbar-width: thin;
+    scrollbar-color: theme('colors.slate.300') transparent;
+  }
+
+  .dark * {
+    scrollbar-color: theme('colors.slate.700') transparent;
+  }
+
+  ::selection {
+    background-color: var(--selection-bg);
+    color: var(--selection-text);
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased selection:bg-indigo-100 selection:text-indigo-900;
+  }
+
+  .dark body {
+    @apply bg-slate-900 text-slate-100 selection:bg-indigo-900 selection:text-indigo-100;
+  }
+}
+
+/* Custom Scrollbar for Webkit */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 rounded-full border-4 border-transparent bg-clip-padding hover:bg-slate-400;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  @apply bg-slate-700 hover:bg-slate-600;
+}
+
+/* Markdown Body Styling */
+.markdown-body {
+  @apply leading-relaxed text-slate-800 transition-colors duration-300;
+}
+
+.dark .markdown-body {
+  @apply text-slate-300;
+}
+
+.markdown-body h1 { @apply text-4xl font-extrabold mb-8 mt-10 tracking-tight border-b border-slate-200 pb-4 text-slate-900; }
+.markdown-body h2 { @apply text-2xl font-bold mb-6 mt-10 tracking-tight border-b border-slate-100 pb-2 text-slate-800; }
+.markdown-body h3 { @apply text-xl font-bold mb-4 mt-8 text-slate-800; }
+
+.dark .markdown-body h1 { @apply border-slate-800 text-white; }
+.dark .markdown-body h2 { @apply border-slate-800/50 text-slate-100; }
+.dark .markdown-body h3 { @apply text-slate-100; }
+
+.markdown-body p { @apply mb-6 text-lg leading-8; }
+.markdown-body ul { @apply list-disc pl-6 mb-6 space-y-2; }
+.markdown-body ol { @apply list-decimal pl-6 mb-6 space-y-2; }
+
+.markdown-body blockquote { 
+  @apply border-l-4 border-indigo-500 bg-indigo-50/50 px-6 py-4 italic text-slate-700 rounded-r-lg mb-8; 
+}
+.dark .markdown-body blockquote {
+  @apply bg-indigo-900/20 text-slate-400 border-indigo-400;
+}
+
+.markdown-body code:not(pre code) { 
+  @apply bg-slate-100 px-1.5 py-0.5 rounded font-mono text-sm text-indigo-600 font-medium; 
+}
+.dark .markdown-body code:not(pre code) {
+  @apply bg-slate-800 text-indigo-400;
+}
+
+.markdown-body pre { 
+  @apply bg-slate-900 text-slate-50 p-6 rounded-xl overflow-x-auto mb-8 font-mono text-sm shadow-xl ring-1 ring-white/10; 
+}
+.markdown-body pre code { @apply bg-transparent p-0 text-inherit leading-6; }
+
+.markdown-body table { @apply w-full border-collapse mb-8 overflow-hidden rounded-lg ring-1 ring-slate-200; }
+.dark .markdown-body table { @apply ring-slate-800; }
+
+.markdown-body th, .markdown-body td { @apply border border-slate-200 p-4 text-left; }
+.dark .markdown-body th, .dark .markdown-body td { @apply border-slate-800; }
+
+.markdown-body th { @apply bg-slate-50 font-bold text-slate-900; }
+.dark .markdown-body th { @apply bg-slate-800/50 text-white; }
+
+.markdown-body a { @apply text-indigo-600 font-medium hover:text-indigo-500 underline underline-offset-4 decoration-indigo-300 hover:decoration-indigo-500 transition-all; }
+.dark .markdown-body a { @apply text-indigo-400 hover:text-indigo-300 decoration-indigo-700 hover:decoration-indigo-500; }
+
+.markdown-body img { @apply max-w-full h-auto rounded-2xl shadow-2xl my-10 ring-1 ring-slate-200/50; }
+.dark .markdown-body img { @apply ring-white/10; }
+
+.markdown-body hr { @apply my-12 border-slate-200; }
+.dark .markdown-body hr { @apply border-slate-800; }
+
+/* Editor Focus State */
+textarea:focus {
+  @apply ring-0 outline-none;
+}
+
