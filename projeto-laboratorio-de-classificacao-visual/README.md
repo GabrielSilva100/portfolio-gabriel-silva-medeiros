@@ -61,4 +61,4 @@ Learn more about how to use the code snippet on [github](https://github.com/goog
     }
 </script>
 ```
-[Acessar Site ao Vivo](https://ais-pre-hha3kegsifbfgbbo4eielw-621579859143.us-east1.run.app) | [Voltar ao início](https://github.com/GabrielSilva100/portfolio-gabriel-silva-medeiros)
+[Acessar Site ao Vivo](https://teachablemachine.withgoogle.com/train/image) | [Voltar ao início](https://github.com/GabrielSilva100/portfolio-gabriel-silva-medeiros)
